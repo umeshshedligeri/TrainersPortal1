@@ -2,4 +2,6 @@
     width: 100%;
     text-align: end;
   }
- 
+ .nav-item{
+   font-size: 20px;
+ }
