@@ -1,8 +1,5 @@
 <div class="modal-dialog cascading-modal" role="document">
-
   <div class="modal-content">
-
-
     <div class="modal-c-tabs">
 
       <div>
@@ -22,14 +19,12 @@
 
         <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
-          <!-- <div class="row mb-4">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"> -->
+
           <mdb-card>
 
             <mdb-card-header class="info-color white-text text-center py-3">
               <h5>
-                <strong>Register</strong>
+                <strong> Trainer Register</strong>
               </h5>
 
             </mdb-card-header>
@@ -39,43 +34,43 @@
             <mdb-card-body class="px-lg-5 pt-0">
 
 
-              <form class="text-center" style="color: #757575;">
-
+              <form class="text-center" style="color: #757575;" (submit)="onRegisterTrainer()">
+                <ng-flash-message></ng-flash-message>
 
                 <div class="md-form">
-                  <input type="text" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="text" class="form-control" mdbInputDirective name="tname" [(ngModel)]='tname'>
                   <label for="materialLoginFormEmail">Name:</label>
                 </div>
 
                 <div class="md-form">
-                  <input type="email" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="email" class="form-control" mdbInputDirective name="temail" [(ngModel)]='temail'>
                   <label for="materialLoginFormEmail">E-mail:</label>
                 </div>
 
                 <div class="md-form">
-                  <input type="number" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="password" class="form-control" mdbInputDirective name="tpassword" [(ngModel)]='tpassword'>
+                  <label for="materialLoginFormEmail">Password:</label>
+                </div>
+
+                <div class="md-form">
+                  <input type="number" class="form-control" mdbInputDirective name="tmobile" [(ngModel)]='tmobile'>
                   <label for="materialLoginFormEmail">Mobile:</label>
                 </div>
 
 
                 <div class="md-form">
-                  <input type="email" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="text" class="form-control" mdbInputDirective name="taddress" [(ngModel)]='taddress'>
                   <label for="materialLoginFormEmail">Address</label>
                 </div>
 
 
                 <div class="md-form">
-                  <input type="text" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
+                  <input type="text" class="form-control" mdbInputDirective name="tskill" [(ngModel)]='tskill'>
                   <label for="materialLoginFormPassword">Skills:</label>
                 </div>
 
                 <div class="md-form">
-                  <input type="password" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-                  <label for="materialLoginFormPassword">Place:</label>
-                </div>
-
-                <div class="md-form">
-                  <input type="number" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
+                  <input type="number" class="form-control" mdbInputDirective name="texperience" [(ngModel)]='texperience'>
                   <label for="materialLoginFormPassword">Experience:</label>
                 </div>
 
@@ -83,7 +78,7 @@
                   <label for="materialLoginFormPassword">Profile:</label>
                   <br>
                   <br>
-                  <input type="file" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
+                  <input type="file" class="form-control" mdbInputDirective name="tprofile" [(ngModel)]='tprofile'>
 
                 </div>
 
@@ -91,79 +86,63 @@
                   <label for="materialLoginFormPassword">Demo Video:</label>
                   <br>
                   <br>
-                  <input type="file" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-
+                  <input type="file" class="form-control" mdbInputDirective name="tdemovideo" [(ngModel)]='tdemovideo'>
                 </div>
-
                 <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
                   mdbWavesEffect type="submit">Register</button>
-
-
                 <p>Already Registered?
                   <a href="">Log In</a>
                 </p>
-
-
-
-
               </form>
-
             </mdb-card-body>
-
           </mdb-card>
           <!-- </div>
   </div>  -->
         </div>
-
-
-
         <div class="tab-pane fade" id="panel8" role="tabpanel">
-
           <!-- <div class="row mb-4">
     <div class="col-md-4"></div>
     <div class="col-md-4"> -->
           <mdb-card>
-
             <mdb-card-header class="info-color white-text text-center py-3">
               <h5>
-                <strong>Register</strong>
+                <strong> Student Register</strong>
               </h5>
-
             </mdb-card-header>
-
-
-
             <mdb-card-body class="px-lg-5 pt-0">
-
-
-              <form class="text-center" style="color: #757575;">
-
-
+              <form class="text-center" style="color: #757575;" (submit)="onRegisterStudent()">
+                <ng-flash-message></ng-flash-message>
                 <div class="md-form">
-                  <input type="text" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="text" class="form-control" mdbInputDirective name="sname" [(ngModel)]='sname'>
                   <label for="materialLoginFormEmail">Name:</label>
                 </div>
 
                 <div class="md-form">
-                  <input type="email" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="email" class="form-control" mdbInputDirective name="semail" [(ngModel)]='semail'>
                   <label for="materialLoginFormEmail">E-mail:</label>
                 </div>
 
                 <div class="md-form">
-                  <input type="number" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="password" class="form-control" mdbInputDirective name="spassword" [(ngModel)]='spassword'>
+                  <label for="materialLoginFormEmail">Password:</label>
+                </div>
+
+                <div class="md-form">
+                  <input type="number" class="form-control" mdbInputDirective name="smobile" [(ngModel)]='smobile'>
                   <label for="materialLoginFormEmail">Mobile:</label>
                 </div>
 
                 <div class="md-form">
 
                   <label for="materialLoginFormEmail">Date-of-Birth:</label><br>
-                  <input type="date" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="date" class="form-control" mdbInputDirective name="sdob" [(ngModel)]='sdob'>
                 </div>
 
                 <div class="md-form">
                   <!--Blue select-->
                   <label for="materialLoginFormEmail">Qualification:</label><br><br>
-                  <select class="mdb-select md-form colorful-select dropdown-primary form-control">
+                  <select class="mdb-select md-form colorful-select dropdown-primary form-control" name="squalification"
+                    [(ngModel)]='squalification'>
                     <option value="1">B.E/B.TECH</option>
                     <option value="2">BCA</option>
                     <option value="3">MCA</option>
@@ -176,7 +155,8 @@
 
                 <div class="md-form">
                   <label for="materialLoginFormEmail">Branch:</label><BR><BR>
-                  <select class="mdb-select md-form colorful-select dropdown-primary form-control">
+                  <select class="mdb-select md-form colorful-select dropdown-primary form-control" name="sbranch"
+                    [(ngModel)]='sbranch'>
                     <option value="1">CSE/ISE</option>
                     <option value="2">CIVIL</option>
                     <option value="3">MECH</option>
@@ -187,53 +167,34 @@
 
                 <div class="md-form">
 
-                    <label for="materialInline1">Gender:</label><br>
+                  <label for="materialInline1">Gender:</label><br>
 
                   <div class="form-check form-check-inline">
-                    <input type="radio" class="form-check-input" id="materialInline1" name="inlineMaterialRadiosExample">
+                    <input type="radio" class="form-check-input" id="materialInline1" name="sgender" [(ngModel)]='sgender'>
                     Male
-                    <input type="radio" class="form-check-input" id="materialInline2" name="inlineMaterialRadiosExample">
+                    <input type="radio" class="form-check-input" id="materialInline2">
                     Female
-                      <input type="radio" class="form-check-input" id="materialInline3" name="inlineMaterialRadiosExample">
+                    <input type="radio" class="form-check-input" id="materialInline3">
                     Others
                   </div>
                 </div>
 
 
                 <div class="md-form">
-                  <input type="email" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="email" class="form-control" mdbInputDirective name="saddress" [(ngModel)]='saddress'>
                   <label for="materialLoginFormEmail">Address</label>
-                </div>
-
-
-                <div class="md-form">
-                  <input type="text" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-                  <label for="materialLoginFormPassword">Skills:</label>
-                </div>
-
-                <div class="md-form">
-                  <input type="password" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-                  <label for="materialLoginFormPassword">Place:</label>
-                </div>
-
-                <div class="md-form">
-                  <input type="number" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-                  <label for="materialLoginFormPassword">Experience:</label>
                 </div>
 
                 <div class="md-form">
                   <label for="materialLoginFormPassword">Profile:</label>
                   <br>
                   <br>
-                  <input type="file" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
-
+                  <input type="file" id="materialLoginFormPassword" class="form-control" mdbInputDirective name="sprofile"
+                    [(ngModel)]='sprofile'>
                 </div>
-
-
 
                 <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
                   mdbWavesEffect type="submit">Register</button>
-
 
                 <p>Already Registered?
                   <a href="">Log In</a>
@@ -247,7 +208,7 @@
             </mdb-card-body>
 
           </mdb-card>
-          
+
 
         </div>
 
