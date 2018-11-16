@@ -18,19 +18,20 @@
           <mdb-card>
             <mdb-card-header class="info-color white-text text-center py-3">
               <h5>
-                <strong>Login</strong>
+                <strong> Trainer Login</strong>
               </h5>
             </mdb-card-header>
             <mdb-card-body class="px-lg-5 pt-0">
               <form class="text-center" style="color: #757575;">
+                <ng-flash-message></ng-flash-message>
                 <div class="md-form">
-                  <input type="email" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="email" class="form-control" mdbInputDirective name="temail" [(ngModel)]="temail">
                   <label for="materialLoginFormEmail">E-mail</label>
                 </div>
 
 
                 <div class="md-form">
-                  <input type="password" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
+                  <input type="password" class="form-control" mdbInputDirective name="tpassword" [(ngModel)]="tpassword">
                   <label for="materialLoginFormPassword">Password</label>
                 </div>
 
@@ -63,19 +64,20 @@
           <mdb-card>
             <mdb-card-header class="info-color white-text text-center py-3">
               <h5>
-                <strong>Login</strong>
+                <strong> Student Login</strong>
               </h5>
 
             </mdb-card-header>
             <mdb-card-body class="px-lg-5 pt-0">
               <form class="text-center" style="color: #757575;">
+                <ng-flash-message></ng-flash-message>
                 <div class="md-form">
-                  <input type="email" id="materialLoginFormEmail" class="form-control" mdbInputDirective>
+                  <input type="email" class="form-control" mdbInputDirective name="semail" [(ngModel)]="semail">
                   <label for="materialLoginFormEmail">E-mail</label>
                 </div>
 
                 <div class="md-form">
-                  <input type="password" id="materialLoginFormPassword" class="form-control" mdbInputDirective>
+                  <input type="password" class="form-control" mdbInputDirective name="spassword" [(ngModel)]="spassword">
                   <label for="materialLoginFormPassword">Password</label>
                 </div>
 
