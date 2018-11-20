@@ -7,8 +7,8 @@ export class ValidateService {
 
   constructor() { }
 
-  validateTrainer(trainer) {
-    if (trainer.tname == undefined || trainer.temail == undefined || trainer.tpassword == undefined) {
+  validateTrainer(user) {
+    if (user.tname == undefined || user.temail == undefined || user.tpassword == undefined) {
       return false;
     }
     else {
@@ -16,18 +16,18 @@ export class ValidateService {
     }
   }
 
-  validateEmail(temail) {
+  validateTrainerEmail(temail) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(temail).toLowerCase());
   }
 
-  validatePassword(tpassword) {
+  validateTrainerPassword(tpassword) {
     var re = /[a-z]\d|\d[a-z]/i;
     return re.test(tpassword) && tpassword.length > 3;
   }
 
-  validateStudent(student) {
-    if (student.tname == undefined || student.temail == undefined || student.tpassword == undefined) {
+  validateStudent(studentuser) {
+    if (studentuser.sname == undefined || studentuser.semail == undefined || studentuser.spassword == undefined) {
       return false;
     }
     else {

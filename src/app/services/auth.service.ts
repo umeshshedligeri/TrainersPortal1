@@ -11,13 +11,21 @@ export class AuthService {
 
   authToken: any;
   user: any;
+  studentuser:any;
 
   constructor(private http: Http) { }
 
-  registerTrainer(trainer) {
+  registerTrainer(user) {
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('/users/register', trainer, { headers: headers })
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/users/register/trainer', JSON.stringify(user), { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  registerStudent(studentuser) {
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/users/register/student', JSON.stringify(studentuser), { headers: headers })
       .pipe(map(res => res.json()));
   }
 }

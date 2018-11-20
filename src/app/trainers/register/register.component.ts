@@ -44,7 +44,7 @@ export class RegisterComponent {
 
 
   onRegisterTrainer() {
-    const trainer = {
+    const user = {
       tname: this.tname,
       temail: this.temail,
       tmobile: this.tmobile,
@@ -56,8 +56,9 @@ export class RegisterComponent {
       tpassword: this.tpassword
     };
 
+    
     //Required feilds
-    if (!this.validateservice.validateTrainer(trainer)) {
+    if (!this.validateservice.validateTrainer(user)) {
       this.ngFlashMessageService.showFlashMessage({
 
         messages: ["Please Fill in all details"],
@@ -70,7 +71,7 @@ export class RegisterComponent {
     }
 
     //validate temail
-    if (!this.validateservice.validateEmail(trainer.temail)) {
+    if (!this.validateservice.validateTrainerEmail(user.temail)) {
       this.ngFlashMessageService.showFlashMessage({
 
         messages: ["Please Enter valid mail"],
@@ -82,7 +83,7 @@ export class RegisterComponent {
     }
 
     //validate tpassword  
-    if (!this.validateservice.validatePassword(trainer.tpassword)) {
+    if (!this.validateservice.validateTrainerPassword(user.tpassword)) {
       this.ngFlashMessageService.showFlashMessage({
 
         messages: ["Password should contain atleast 3 char"],
@@ -93,9 +94,20 @@ export class RegisterComponent {
       return false;
 
     }
+    else{
     //Register trainer
-    this.authservice.registerTrainer(trainer).subscribe(data => {
-      if (!data.success) {
+    this.authservice.registerTrainer(user).subscribe(data => {
+      if (data.success) {
+        this.ngFlashMessageService.showFlashMessage({
+          messages: ["Logged In"],
+          dismissible: true,
+          timeout: 3000,
+          type: 'danger'
+        });
+        console.log(this.tname,this.temail,this.tmobile,this.taddress,this.tskills,this.taddress,this.texperience,this.tprofile,this.tdemovideo,this.tpassword)
+        this.router.navigate(['/login']);
+      } else {
+
         this.ngFlashMessageService.showFlashMessage({
           messages: ["Something went wrong"],
           dismissible: true,
@@ -103,22 +115,13 @@ export class RegisterComponent {
           type: 'danger'
         });
         this.router.navigate(['/register']);
-      } else {
-
-        this.ngFlashMessageService.showFlashMessage({
-          messages: ["Logged in"],
-          dismissible: true,
-          timeout: 3000,
-          type: 'danger'
-        });
-        this.router.navigate(['/login']);
       }
     });
-
+  }
   }
 
   onRegisterStudent() {
-    const student = {
+    const studentuser = {
       sname: this.sname,
       semail: this.semail,
       smobile: this.smobile,
@@ -131,7 +134,7 @@ export class RegisterComponent {
       spassword: this.spassword
     };
     //Required feilds
-    if (!this.validateservice.validateStudent(student)) {
+    if (!this.validateservice.validateStudent(studentuser)) {
       this.ngFlashMessageService.showFlashMessage({
 
         messages: ["Please Fill in all details"],
@@ -144,7 +147,7 @@ export class RegisterComponent {
     }
 
     //validate temail
-    if (!this.validateservice.validateStudentEmail(student.semail)) {
+    if (!this.validateservice.validateStudentEmail(studentuser.semail)) {
       this.ngFlashMessageService.showFlashMessage({
 
         messages: ["Please Enter valid mail"],
@@ -156,7 +159,7 @@ export class RegisterComponent {
     }
 
     //validate tpassword  
-    if (!this.validateservice.validateStudentPassword(student.spassword)) {
+    if (!this.validateservice.validateStudentPassword(studentuser.spassword)) {
       this.ngFlashMessageService.showFlashMessage({
 
         messages: ["Password should contain atleast 3 char"],
@@ -165,6 +168,31 @@ export class RegisterComponent {
         type: 'danger'
       });
       return false;
+    }
+
+    else{
+      //Register trainer
+      this.authservice.registerStudent(studentuser).subscribe(data => {
+        if (data.success) {
+          this.ngFlashMessageService.showFlashMessage({
+            messages: ["Logged In"],
+            dismissible: true,
+            timeout: 3000,
+            type: 'danger'
+          });
+          console.log(this.sname,this.semail,this.smobile,this.saddress,this.sprofile,this.sbranch,this.sgender,this.squalification,this.sdob,this.spassword)
+          this.router.navigate(['/login']);
+        } else {
+  
+          this.ngFlashMessageService.showFlashMessage({
+            messages: ["Something went wrong"],
+            dismissible: true,
+            timeout: 3000,
+            type: 'danger'
+          });
+          this.router.navigate(['/register']);
+        }
+      });
     }
   }
 }
